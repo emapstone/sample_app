@@ -1,0 +1,18 @@
+function pink() {
+	canvas = document.getElementById('gameCanvas');
+	img = new Image();
+	img.src = <%= asset_path( 'simba.png' ) %>
+	resize();
+}
+
+function resize() {
+  canvas.width = canvas.parentNode.clientWidth;
+  canvas.height = canvas.parentNode.clientHeight;
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#333333';
+  ctx.fillRect(canvas.width/3, canvas.height/3, canvas.width/3, canvas.height/3);
+  ctx.drawImage(img, canvas.width/2 - (img.width/2), canvas.height/2 - (img.height/2));
+  
+}

@@ -6,53 +6,7 @@
 	var ypos = 40;
 	var coinArray = [];
 	var background = null;
-	
-	document.write("<script src='./keyhandler.js' type='text/javascript'></script>");
-	
-	function dist(p, q)
-    {	
-    	//calculating distance using two points - this function works
-    	var f1 = (p[0] - q[0])*(p[0] - q[0]);
-    	var f2 = (p[1] - q[1])*(p[1] - q[1]);
-    	var distance = Math.sqrt(f1 + f2);
-    	return distance
-	}
-	function myCoin(image, x, y)
-	{
-		//this.img.src = './coin.png';
-		this.img = new Image();
-		this.img.src = image;
-		this.coord = [x, y];
-		this.center = [x + 10, y - 10];
-		this.radius = 10;
-
-	}
-	
-	function myGuy(image, xpos, ypos)
-	{
 		
-		//not calling this function anywhere at the moment
-		//justrunningguy.png is 376 x 94 and the window is 94 x 94
-		this.img = new Image();
-		this.img.src = image;
-		this.coord= [xpos, ypos]
-		this.center = [xpos + 47, ypos - 47]
-		this.radius = 47
-		this.xpos = xpos;
-		this.ypos = ypos;
-	}
-	
-	function initCoinPlacement()
-	{
-		//coin.png is 20 x 20
-		var x1 = 100;
-		var y1 = 100;
-		for (i=0;i<10;i++) {
-			var coin = new myCoin('./coin.png', x1, y1);
-			coinArray.push(coin)
-			x1 = x1 + 60
-			}
-	}
 	function collect_program() {
     	canvas = document.getElementById('gameCanvas');
 		resize();
